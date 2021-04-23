@@ -99,6 +99,10 @@ li a:hover{
     grid-gap: 30px;
 }
 
+g{
+    position: fixed;
+}
+
 .card1 {
     color: white;
     grid-column-start: 2;
@@ -110,6 +114,8 @@ li a:hover{
     min-width: 300px;
     max-width: 300px;
     min-height: 150px;  
+    max-height: 100px;
+
 }
 
 .card2 {
@@ -120,11 +126,31 @@ li a:hover{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-image: linear-gradient(to bottom right, #667eea, #764ba2);
     border-radius: 15px;
-    margin-bottom: 150px; 
+
     min-width: 300px;
-    max-width: 300px;
+    max-width: 30px;
     min-height: 150px;  
+    max-height: 100px;
 }
+
+.card3 {
+    color: white;
+    grid-column-start: 2;
+ 
+    grid-row-start:  3;
+    grid-row-end: 3;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-image: linear-gradient(to bottom right, #667eea, #764ba2);
+    border-radius: 15px;
+    margin-top: -150px;
+   
+    min-width: 300px;
+    max-width: 30px;
+    min-height: 150px;  
+    max-height: 100px;
+
+}
+
 .rotateup{
     display: flex;
     justify-content: end;
@@ -205,6 +231,11 @@ li a:hover{
         min-width: 100%;
     }
     .card2 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        min-width: 100%;
+    }
+    .card3 {
         grid-column-start: 1;
         grid-column-end: 4;
         min-width: 100%;

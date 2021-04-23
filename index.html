@@ -16,8 +16,9 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
 
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="main.js"></script>
+    <script src="graph.js"></script>
 
 
 </head>
@@ -60,6 +61,14 @@
                 </div>
             </div>
         </div>
+        <div class="card3">
+
+
+            <div id="curve_chart" class="chart"></div>
+
+
+        </div>
+
     </section>
 
     <footer class="colorDark">
@@ -71,7 +80,7 @@
             </li>
 
             <li>
-                <a href="">
+                <a href="view.html">
                     View
                 </a>
             </li>
@@ -84,7 +93,9 @@
 
         </div>
     </footer>
-
+    <script type="text/javascript">
+        setGraph()
+    </script>
 </body>
 
 

@@ -129,6 +129,7 @@ function getPrice() {
 
 
 
+
 function setUp() {
     setDatafile()
     setPriceHtml()
