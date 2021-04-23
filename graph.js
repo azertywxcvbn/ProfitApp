@@ -101,13 +101,27 @@ function setGraph() {
             ]);
 
             var options = {
-                backgroundColor: '#f1eee9',
+                colors: ['white'],
                 width: 350,
                 height: 150,
                 curveType: 'function',
                 legend: { position: 'bottom' },
                 lineWidth: 3,
-                backgroundColor: { fill: 'transparent' }
+                backgroundColor: { fill: 'transparent' },
+                vAxis: {
+                    gridlines: {
+
+                        color: 'transparent'
+                    }
+                },
+                vAxis: {
+                    textStyle: { color: 'white' },
+                    color: 'white',
+                    gridlines: {
+                        color: 'transparent'
+                    }
+
+                }
 
 
             };
