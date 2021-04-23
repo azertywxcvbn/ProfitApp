@@ -105,7 +105,7 @@ function setGraph() {
                 width: 350,
                 height: 150,
                 curveType: 'function',
-                legend: { position: 'bottom' },
+                legend: { position: 'bottom', textStyle: { color: 'white' } },
                 lineWidth: 3,
                 backgroundColor: { fill: 'transparent' },
                 vAxis: {
