@@ -1,0 +1,17 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "firebase-admin": "^9.6.0",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
