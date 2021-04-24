@@ -116,7 +116,7 @@ function usericon() {
             x.style.display = "none";
             darkermenu.style.display = "none";
             body.style.overflow = "";
-            menuId.style.animation = "menuup 0.5s 1";
+            menuId.style.animation = "menuup 1s";
         }
 
 
