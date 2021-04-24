@@ -108,15 +108,13 @@ function usericon() {
 
     if (x.style.display === "block") {
         x.style.display = "none";
-        body.style.filter = ""
-        body.style.overflow = ""
+
 
     } else {
         x.style.display = "block";
 
-        body.style.filter = "blur(2px)"
-        x.style.filter = ""
-        body.style.overflow = "hidden"
+
+
     }
 }
 

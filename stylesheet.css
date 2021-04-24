@@ -45,15 +45,10 @@ footer{
 
 }
 
-.iconUser{
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
 .centerText{
     display: flex;
     justify-content: center;
-  margin-top: 20px;
+    margin-top: 20px;
 
    
 }
@@ -112,9 +107,15 @@ li{
 }
 
 .iconuser{
-    
+    height: 100%;
     width: 40px;
 }
+
+.iconUser{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
 .active{
     filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%); */
 
