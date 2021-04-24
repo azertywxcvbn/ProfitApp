@@ -23,84 +23,97 @@
 
 </head>
 
-<body onload="setUp()" id="bodyId">
+<body onload="setUp()" id="body">
+
+    <div id="bodyId" class="body">
+        <nav class="colorDark">
+
+            <div class="gridNav">
+                <section>
+                    <h1 class="centerText">Profit App</h1>
+                </section>
+                <section>
+
+                    <a onclick="usericon()" class="iconUser">
+                        <img src="img/user.svg" alt="foto-arrow" class="iconuser">
+                    </a>
+
+                </section>
+            </div>
+            <!-- <p id="updateId"></p> -->
+        </nav>
 
 
-    <nav class="colorDark">
 
-        <div class="gridNav">
-            <section>
-                <h1 class="centerText">Profit Appp</h1>
-            </section>
-            <section>
+        <section class="cardgrid">
+            <div class="card1">
+                <div class="containercard">
+                    <h4 class="center fontbig">Profit </h4>
 
-                <a onclick="usericon()" class="iconUser">
-                    <img src="img/user.svg" alt="foto-arrow" class="iconuser">
-                </a>
+                    <div class="gridprofit">
+                        <p class="gridprofittext" id="profitId"> </p>
+                        <p class="gridprofittex2" id="sharesId"></P>
 
-            </section>
-        </div>
-        <!-- <p id="updateId"></p> -->
-    </nav>
+                        <img src="" alt="foto-arrow" class="" id="arrowId">
+                    </div>
+                </div>
+            </div>
+            <div class="card2">
+                <div class="containercard">
+                    <h4 class="center fontbig">Info </h4>
+                    <div class="gridprofit">
+                        <p class="gridinfotext" id='priceId'> </p>
 
-    <div class="MenuInfo" id="menuId">
-        dff
+                        <p class="gridinfotext2" id="dateId"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card3">
+
+
+                <div id="curve_chart" class="chart"></div>
+
+
+            </div>
+
+        </section>
+
+        <footer class="colorDark">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img src="img/home.svg" alt="foto-arrow" class="iconnav active">
+                    </a>
+                </li>
+                <li>
+                    <a href="buy.html">
+                        <img src="img/add.svg" alt="foto-arrow" class="iconnav">
+                    </a>
+                </li>
+                <li>
+                    <a href="view.html">
+                        <img src="img/file.svg" alt="foto-arrow" class="iconnav">
+                    </a>
+                </li>
+            </ul>
+
+
+        </footer>
     </div>
-
-    <section class="cardgrid">
-        <div class="card1">
-            <div class="containercard">
-                <h4 class="center fontbig">Profit </h4>
-
-                <div class="gridprofit">
-                    <p class="gridprofittext" id="profitId"> </p>
-                    <p class="gridprofittex2" id="sharesId"></P>
-
-                    <img src="" alt="foto-arrow" class="" id="arrowId">
-                </div>
-            </div>
-        </div>
-        <div class="card2">
-            <div class="containercard">
-                <h4 class="center fontbig">Info </h4>
-                <div class="gridprofit">
-                    <p class="gridinfotext" id='priceId'> </p>
-
-                    <p class="gridinfotext2" id="dateId"></p>
-                </div>
-            </div>
-        </div>
-        <div class="card3">
+    <section>
 
 
-            <div id="curve_chart" class="chart"></div>
-
+        <div id="darkermenu" class="darkermenu">
 
         </div>
 
+        <div id="menuId" class="MenuInfo">
+            <a onclick="usericon()">
+                <img src="img/x.svg" alt="foto-arrow" class="iconclose active">
+            </a>
+
+        </div>
     </section>
-
-    <footer class="colorDark">
-        <ul>
-            <li>
-                <a href="index.html">
-                    <img src="img/home.svg" alt="foto-arrow" class="iconnav active">
-                </a>
-            </li>
-            <li>
-                <a href="buy.html">
-                    <img src="img/add.svg" alt="foto-arrow" class="iconnav">
-                </a>
-            </li>
-            <li>
-                <a href="view.html">
-                    <img src="img/file.svg" alt="foto-arrow" class="iconnav">
-                </a>
-            </li>
-        </ul>
-
-
-    </footer>
     <script type="text/javascript">
         setGraph()
     </script>

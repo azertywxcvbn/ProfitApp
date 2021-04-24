@@ -104,14 +104,20 @@ function setSharesHtml() {
 
 function usericon() {
     var x = document.getElementById("menuId");
-    var body = document.getElementById("bodyId");
-
+    var body2 = document.getElementById("bodyId");
+    var body = document.getElementById("body");
+    var darkermenu = document.getElementById("darkermenu");
     if (x.style.display === "block") {
         x.style.display = "none";
+        darkermenu.style.display = "none";
+        body.style.overflow = "";
 
 
     } else {
         x.style.display = "block";
+        darkermenu.style.display = "block";
+        body.style.overflow = "hidden";
+
 
 
 

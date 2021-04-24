@@ -7,6 +7,7 @@ html {
   }
 
 * {
+   
   margin: 0;
   padding: 0;
 }
@@ -21,7 +22,7 @@ body{
     bottom: 0;
     right: 0;
     background-color: #2B2E4A;
-    
+   
    
 }
 
@@ -59,6 +60,7 @@ footer{
 }
 nav{
     position: fixed;
+    z-index: 10;
     width: 100%;
     font-size: x-large;
     height: 100px;
@@ -90,20 +92,38 @@ li{
     border-radius: 35px 35px 0px 0px;
     height: 50%;
     width: 100%;
-    position: absolute;
     position: fixed;
     bottom: 0%;
-    z-index: 2;
-    background-color: violet;
+    z-index: 20;
+    background-color: #2B2E4A;
 
 }
 
+.darkermenu{
+    position: fixed;
+    display: none;
+    
+    z-index: 10;
+    bottom: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: .3;
 
+}
 
 .iconnav{
     width: 30px;
     filter: invert(56%) sepia(0%) saturate(30%) hue-rotate(195deg) brightness(90%) contrast(84%);
 
+}
+.iconclose{
+    height: 100%;
+    width: 40px;
+    position: absolute;
+    z-index: 20;
+    top: -120px;
+    right: 10px;
 }
 
 .iconuser{
