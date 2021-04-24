@@ -30,7 +30,7 @@ function setUpdateHtml() {
     refUpdate.on("value", gotData, errorData);
     function gotData(data) {
         var update = data.val();
-        document.getElementById("updateId").innerHTML = update;
+        document.getElementById("updateId").innerHTML = "Last update: " + update;
     }
     function errorData(err) {
         console.log("error");
@@ -107,16 +107,20 @@ function usericon() {
     var body2 = document.getElementById("bodyId");
     var body = document.getElementById("body");
     var darkermenu = document.getElementById("darkermenu");
+
+
     if (x.style.display === "block") {
         x.style.display = "none";
         darkermenu.style.display = "none";
         body.style.overflow = "";
 
 
+
     } else {
         x.style.display = "block";
         darkermenu.style.display = "block";
         body.style.overflow = "hidden";
+
 
 
 

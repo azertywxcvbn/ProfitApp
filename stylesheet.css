@@ -87,18 +87,41 @@ li{
     list-style-type: none;
 }
 
+@keyframes menudown{
+    0%{
+        top: 50%;
+ 
+    }
+    100%{
+        top: 100%;
+   
+    }
+   
+
+}
 .MenuInfo{
     display: none;
     border-radius: 35px 35px 0px 0px;
     height: 50%;
     width: 100%;
     position: fixed;
-    bottom: 0%;
+    top: 50%;
     z-index: 20;
     background-color: #2B2E4A;
+    animation: menuup 1s 1;
+}
+@keyframes menuup{
+    0%{
+        top: 100%;
+ 
+    }
+    100%{
+        top: 50%;
+   
+    }
+   
 
 }
-
 .darkermenu{
     position: fixed;
     display: none;
@@ -110,6 +133,16 @@ li{
     background-color: #000000;
     opacity: .3;
 
+}
+
+
+.menutext{
+    
+    line-height: 30px;
+    position: absolute;
+    color: white;
+    top: 70px;
+    left: 20px;
 }
 
 .iconnav{
