@@ -23,51 +23,70 @@
 
 </head>
 
-<body onload="setUp()">
+<body onload="setUp()" id="body">
+
+    <div id="bodyId" class="body">
+        <nav class="colorDark">
+
+            <div class="gridNav">
+                <section>
+                    <h1 class="centerText">View</h1>
+                </section>
+                <section>
+
+                    <a onclick="usericon()" class="iconUser">
+                        <img src="img/user.svg" alt="foto-arrow" class="iconuser">
+                    </a>
+
+                </section>
+            </div>
+
+        </nav>
 
 
 
-    <nav class="colorDark">
 
-        <div class="gridNav">
-            <section>
-                <h1 class="centerText">View</h1>
-            </section>
-            <section>
 
-                <a href="index.html" class="iconUser">
-                    <img src="img/user.svg" alt="foto-arrow" class="iconuser">
-                </a>
+        <footer class="colorDark">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <img src="img/home.svg" alt="foto-arrow" class="iconnav ">
+                    </a>
+                </li>
+                <li>
+                    <a href="buy.html">
+                        <img src="img/add.svg" alt="foto-arrow" class="iconnav ">
+                    </a>
+                </li>
+                <li>
+                    <a href="view.html">
+                        <img src="img/file.svg" alt="foto-arrow" class="iconnav active">
+                    </a>
+                </li>
+            </ul>
 
-            </section>
+
+        </footer>
+    </div>
+    <section>
+
+
+        <div id="darkermenu" class="darkermenu">
+
         </div>
-        <!-- <p id="updateId"></p> -->
-    </nav>
 
+        <div id="menuId" class="MenuInfo">
+            <a onclick="usericon()">
+                <img src="img/x.svg" alt="foto-arrow" class="iconclose active">
+            </a>
+            <section class="menutext">
+                <p id="updateId"></p>
+                <p>Version 1.0</p>
+            </section>
 
-
-
-    <footer class="colorDark">
-        <ul>
-            <li>
-                <a href="index.html">
-                    <img src="img/home.svg" alt="foto-arrow" class="iconnav">
-                </a>
-            </li>
-            <li>
-                <a href="buy.html">
-                    <img src="img/add.svg" alt="foto-arrow" class="iconnav">
-                </a>
-            </li>
-            <li>
-                <a href="view.html">
-                    <img src="img/file.svg" alt="foto-arrow" class="iconnav active">
-                </a>
-            </li>
-        </ul>
-
-
-    </footer>
+        </div>
+    </section>
     <script type="text/javascript">
         setGraph()
     </script>
