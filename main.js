@@ -107,12 +107,18 @@ function usericon() {
     var body2 = document.getElementById("bodyId");
     var body = document.getElementById("body");
     var darkermenu = document.getElementById("darkermenu");
-
+    var menuId = document.getElementById("menuId");
 
     if (x.style.display === "block") {
-        x.style.display = "none";
-        darkermenu.style.display = "none";
-        body.style.overflow = "";
+        menuId.style.animation = "menudown 1s 1";
+        setTimeout(set, 500);
+        function set() {
+            x.style.display = "none";
+            darkermenu.style.display = "none";
+            body.style.overflow = "";
+            menuId.style.animation = "menuup 0.5s 1";
+        }
+
 
 
 
