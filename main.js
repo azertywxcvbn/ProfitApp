@@ -102,6 +102,24 @@ function setSharesHtml() {
     }
 }
 
+function usericon() {
+    var x = document.getElementById("menuId");
+    var body = document.getElementById("bodyId");
+
+    if (x.style.display === "block") {
+        x.style.display = "none";
+        body.style.filter = ""
+        body.style.overflow = ""
+
+    } else {
+        x.style.display = "block";
+
+        body.style.filter = "blur(2px)"
+        x.style.filter = ""
+        body.style.overflow = "hidden"
+    }
+}
+
 
 function setDateHtml() {
 

@@ -21,9 +21,12 @@ body{
     bottom: 0;
     right: 0;
     background-color: #2B2E4A;
+    
+   
 }
 
 footer{
+  
     position: fixed;
     bottom: 0%;
     width: 100%;
@@ -84,15 +87,24 @@ ul{
 
 li{
    
- 
     list-style-type: none;
 }
 
-li a:hover{
-    
-    text-decoration: underline ;
-  
+.MenuInfo{
+    display: none;
+    border-radius: 35px 35px 0px 0px;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    position: fixed;
+    bottom: 0%;
+    z-index: 2;
+    background-color: violet;
+
 }
+
+
+
 .iconnav{
     width: 30px;
     filter: invert(56%) sepia(0%) saturate(30%) hue-rotate(195deg) brightness(90%) contrast(84%);
