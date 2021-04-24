@@ -16,8 +16,9 @@
 
     <script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
 
-
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="main.js"></script>
+    <script src="graph.js"></script>
 
 
 </head>
@@ -25,14 +26,22 @@
 <body onload="setUp()">
 
 
+
     <nav class="colorDark">
-        <ul>
-            <h1>View</h1>
 
+        <div class="gridNav">
+            <section>
+                <h1 class="centerText">View</h1>
+            </section>
+            <section>
 
+                <a href="index.html" class="iconUser">
+                    <img src="img/user.svg" alt="foto-arrow" class="iconuser">
+                </a>
 
-        </ul>
-
+            </section>
+        </div>
+        <!-- <p id="updateId"></p> -->
     </nav>
 
 
@@ -41,26 +50,27 @@
     <footer class="colorDark">
         <ul>
             <li>
-                <a href="buy.html">
-                    Buy
+                <a href="index.html">
+                    <img src="img/home.svg" alt="foto-arrow" class="iconnav">
                 </a>
             </li>
-
             <li>
-                <a href="" class="active">
-                    View
+                <a href="buy.html">
+                    <img src="img/add.svg" alt="foto-arrow" class="iconnav">
+                </a>
+            </li>
+            <li>
+                <a href="view.html">
+                    <img src="img/file.svg" alt="foto-arrow" class="iconnav active">
                 </a>
             </li>
         </ul>
-        <div class="centeruser">
-            <a href="index.html">
-                <img src="img/user.svg" alt="foto-arrow" class="iconuser">
-            </a>
 
 
-        </div>
     </footer>
-
+    <script type="text/javascript">
+        setGraph()
+    </script>
 </body>
 
 

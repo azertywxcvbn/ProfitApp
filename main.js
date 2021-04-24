@@ -18,12 +18,25 @@ var refDate = database.ref("date");
 var refPrice = database.ref("price");
 var refShares = database.ref("amount");
 var refBought = database.ref("bought");
+var refUpdate = database.ref("update");
 
 var ref = database.ref("/");
 var datafile = "not";
 
 
 
+
+function setUpdateHtml() {
+    refUpdate.on("value", gotData, errorData);
+    function gotData(data) {
+        var update = data.val();
+        document.getElementById("updateId").innerHTML = update;
+    }
+    function errorData(err) {
+        console.log("error");
+        console.log(err);
+    }
+}
 
 function setDatafile() {
     ref.on("value", gotData);
@@ -131,6 +144,7 @@ function getPrice() {
 
 
 function setUp() {
+    setUpdateHtml()
     setDatafile()
     setPriceHtml()
     setDateHtml()

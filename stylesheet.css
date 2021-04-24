@@ -42,6 +42,23 @@ footer{
 
 }
 
+.iconUser{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.centerText{
+    display: flex;
+    justify-content: center;
+  margin-top: 20px;
+
+   
+}
+
+.gridNav{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
 nav{
     position: fixed;
     width: 100%;
@@ -76,20 +93,19 @@ li a:hover{
     text-decoration: underline ;
   
 }
-.centeruser{
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 10%;
-
+.iconnav{
+    width: 30px;
+    filter: invert(56%) sepia(0%) saturate(30%) hue-rotate(195deg) brightness(90%) contrast(84%);
 
 }
+
 .iconuser{
     
-    width: 80px;
+    width: 40px;
 }
 .active{
-    text-decoration: underline white;
+    filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%); */
+
 }
 .cardgrid{
     display: grid;
