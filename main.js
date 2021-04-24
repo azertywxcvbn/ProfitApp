@@ -111,7 +111,7 @@ function usericon() {
 
     if (x.style.display === "block") {
         menuId.style.animation = "menudown 0.3s";
-        setTimeout(set, 500);
+        setTimeout(set, 250);
         function set() {
             x.style.display = "none";
             darkermenu.style.display = "none";
