@@ -108,7 +108,7 @@ li{
     top: 50%;
     z-index: 20;
     background-color: #2B2E4A;
-    animation: menuup 7s ;
+    animation: menuup 2s ;
 }
 @keyframes menuup{
     0%{
