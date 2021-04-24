@@ -113,12 +113,38 @@ li{
 @keyframes menuup{
     0%{
         top: 100%;
- 
+
+    }
+    10%{
+        top: 95%;
+    }
+    20%{
+        top: 90%;
+    }
+    30%{
+        top: 85%;
+    }
+    40%{
+        top: 80%;
+    }
+    50%{
+        top: 75%;
+    }
+    60%{
+        top: 70%;
+    }
+    70%{
+        top: 65%;
+    }
+    80%{
+        top: 60%;
+    }
+    90%{
+        top: 55%;
     }
     100%{
         top: 50%;
-   
-    }
+    }  
    
 
 }
@@ -170,7 +196,7 @@ li{
     margin-top: 20px;
   }
 .active{
-    filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%); */
+    filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%); 
 
 }
 .cardgrid{
@@ -181,9 +207,7 @@ li{
     grid-gap: 30px;
 }
 
-g{
-    position: fixed;
-}
+
 
 .card1 {
     color: white;
