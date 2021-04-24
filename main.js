@@ -110,13 +110,13 @@ function usericon() {
     var menuId = document.getElementById("menuId");
 
     if (x.style.display === "block") {
-        menuId.style.animation = "menudown 1s 1";
+        menuId.style.animation = "menudown 0.3s";
         setTimeout(set, 500);
         function set() {
             x.style.display = "none";
             darkermenu.style.display = "none";
             body.style.overflow = "";
-            menuId.style.animation = "menuup 1s";
+            menuId.style.animation = "menuup 0.3s";
         }
 
 

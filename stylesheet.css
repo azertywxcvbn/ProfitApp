@@ -108,39 +108,12 @@ li{
     top: 50%;
     z-index: 20;
     background-color: #2B2E4A;
-    animation: menuup 1s ;
+    animation: menuup 0.3s ;
 }
 @keyframes menuup{
     0%{
         top: 100%;
 
-    }
-    10%{
-        top: 95%;
-    }
-    20%{
-        top: 90%;
-    }
-    30%{
-        top: 85%;
-    }
-    40%{
-        top: 80%;
-    }
-    50%{
-        top: 75%;
-    }
-    60%{
-        top: 70%;
-    }
-    70%{
-        top: 65%;
-    }
-    80%{
-        top: 60%;
-    }
-    90%{
-        top: 55%;
     }
     100%{
         top: 50%;
