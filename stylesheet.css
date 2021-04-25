@@ -397,6 +397,29 @@ li{
    
 }
 
+.table{
+    color: white;
+    background-image: linear-gradient(to bottom right, #667eea, #764ba2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+    margin-bottom: 10px; 
+    margin-top: 150px;
+    min-height: 150px;  
+    max-height: 100px;
+  
+  
+}
+.tablesection{
+    padding-top: 30px;
+
+}
+table, th, td {
+    border: 0.1px solid rgb(245, 245, 245);
+  }
+
+table{
+    width:100%;
+}
 @media(max-width:400px){
     
     .card1 {
