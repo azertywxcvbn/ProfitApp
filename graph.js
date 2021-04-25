@@ -1,80 +1,10 @@
+function setGraphHtml() {
 
-var database = firebase.database();
-var graphInfo = database.ref("graph");
-var refDate = database.ref("date");
-var refPrice = database.ref("price");
+    var mydata = getCookie("graphInfo")
 
-function setGrapInfo() {
-    refDate.on("value", gotData, errorData);
-    function gotData(data) {
-        var date = data.val();
+    if (mydata !== "") {
 
-        graphInfo.on("value", gotData, errorData);
-        function gotData(data) {
-            var data = data.val();
-            var priceList = [data[0]["price"], data[1]["price"], data[2]["price"], data[3]["price"], data[4]["price"]]
-            var dateList = [data[0]["date"], data[1]["date"], data[2]["date"], data[3]["date"], data[4]["date"]]
-
-            if (dateList.indexOf(date)) {
-                refPrice.on("value", gotData);
-                function gotData(data) {
-                    price = data.val()
-                    console.log(price)
-                    firebase.database().ref('graph/').set({
-                        0: {
-                            'date': date,
-                            'price': price
-                        },
-                        1: {
-                            'date': dateList[0],
-                            'price': priceList[0]
-                        },
-                        2: {
-                            'date': dateList[1],
-                            'price': priceList[1]
-                        },
-                        3: {
-                            'date': dateList[2],
-                            'price': priceList[2]
-                        },
-                        4: {
-                            'date': dateList[3],
-                            'price': priceList[3]
-                        }
-
-                    });
-
-                }
-
-
-            };
-
-        }
-
-
-
-
-    }
-
-
-}
-
-
-function errorData(err) {
-    console.log("error");
-    console.log(err);
-}
-
-
-
-
-
-function setGraph() {
-    setGrapInfo();
-    graphInfo.on("value", gotData, errorData);
-    function gotData(data) {
-        var data = data.val();
-
+        var data = JSON.parse(mydata)
         google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
 
@@ -130,10 +60,10 @@ function setGraph() {
 
             chart.draw(data, options);
         }
+    }
 
-    }
-    function errorData(err) {
-        console.log("error");
-        console.log(err);
-    }
+
+
 }
+
+
