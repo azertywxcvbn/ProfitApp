@@ -415,3 +415,9 @@ li{
         min-width: 100%;
     }
 }
+
+@media screen and  (display-mode:standalone){
+    header{
+        height: 88px imp !important;
+    }
+}
