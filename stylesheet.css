@@ -170,7 +170,7 @@ li{
    
 }
 
-.buyform input[type="number"]:focus{
+.buybutton input[type="number"]:focus{
     outline: none;
 }
 .textcenter{
@@ -179,7 +179,7 @@ li{
     display: flex;
     justify-content: center;
 }
-.buyform input[type="submit"]{
+.buybutton{
     color: white;
     border: none;
     width: 40%;
@@ -187,8 +187,8 @@ li{
     border-radius: 15px;
     height: 40px;
 }
-.buyform input[type="submit"] {background-image: linear-gradient(to right, #876df5 0%, #8f94fb 51%, #a8c0ff 100%)}
-buyform input[type="submit"]:focus{
+.buybutton {background-image: linear-gradient(to right, #876df5 0%, #8f94fb 51%, #a8c0ff 100%)}
+.buybutton:focus{
     outline: none;
 }
 .buytext{
