@@ -160,12 +160,9 @@ li{
 .buyform input[type="number"]{
     width: 50%;
     color: white;
+    border-image-width: 0px 0px 3px 0px;
     background-color: transparent;
-    border-top: transparent;
-    border-left: transparent;
-    border-right: transparent;
     border-image-source:  linear-gradient(to bottom right, #667eea, #764ba2);
-    border-width: 3px;
     border-image-slice: 1;
    
 }
