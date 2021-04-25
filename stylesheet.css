@@ -119,6 +119,7 @@ li{
     top: 30%;
     z-index: 5;
     background-color: #2B2E4A;
+    -webkit-transform: translateZ(0);
     animation: buyup 0.3s ;
 }
 
@@ -207,6 +208,7 @@ li{
     top: 50%;
     z-index: 20;
     background-color: #2B2E4A;
+    -webkit-transform: translateZ(0);
     animation: menuup 0.3s ;
 }
 @keyframes menuup{
