@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="setUp() " id="body">
+<body onload="setUp('index') " id="body">
 
     <div id="bodyId" class="body">
         <nav class="colorDark">
@@ -82,17 +82,17 @@
             <ul>
                 <li>
                     <a href="index.html">
-                        <img src="img/home.svg" alt="foto-arrow" class="iconnav active">
+                        <img src="img/home.svg" alt="foto-arrow" class="iconnav active" id="homenavId">
                     </a>
                 </li>
                 <li>
-                    <a href="buy.html">
-                        <img src="img/add.svg" alt="foto-arrow" class="iconnav">
+                    <a onclick="buyicon()">
+                        <img src="img/add.svg" alt="foto-arrow" class="iconnav" id="buynavId">
                     </a>
                 </li>
                 <li>
                     <a href="view.html">
-                        <img src="img/file.svg" alt="foto-arrow" class="iconnav">
+                        <img src="img/file.svg" alt="foto-arrow" class="iconnav" id="viewnavId">
                     </a>
                 </li>
             </ul>
@@ -100,6 +100,26 @@
 
         </footer>
     </div>
+    <section>
+        <div id="darkermenu1" class="darkermenu1">
+
+        </div>
+        <div id="buyId" class="MenuBuy">
+
+            <section class="buytext">
+                <h1 class="centerbuy">Buy</h1>
+            </section>
+            <p class="textcenter" id="buyinfo"></p>
+            <form action="" class="buyform">
+                <input type="number" name="input" id="inputid" value="0" step="1" min="0">
+                <input type="submit" name="buy" id="buyidsubmit" value="buy">
+            </form>
+
+        </div>
+
+
+
+    </section>
     <section>
 
 
@@ -112,6 +132,7 @@
                 <img src="img/x.svg" alt="foto-arrow" class="iconclose active">
             </a>
             <section class="menutext">
+                <p>The database updates evry 4 hours.</p>
                 <p id="updateId"></p>
                 <p>Version 1.0</p>
             </section>

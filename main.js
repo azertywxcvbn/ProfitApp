@@ -49,7 +49,7 @@ function isUpdate() {
     if (update == null) {
         setDateCookies()
     }
-    if (updateDate.getHours() + 2 <= currentDate.getHours()) {
+    if (updateDate.getHours() + 4 <= currentDate.getHours()) {
         return true;
     }
     return false;
@@ -133,6 +133,45 @@ function setSharesCookies() {
     }
 }
 
+function buyicon() {
+    var x = document.getElementById("buyId");
+    var buy = document.getElementById("buynavId");
+    var home = document.getElementById("homenavId");
+    var view = document.getElementById("viewnavId");
+
+
+    var darkermenu = document.getElementById("darkermenu1");
+
+
+    if (x.style.display === "block") {
+        x.style.animation = "buydown 0.3s";
+        setTimeout(set, 250);
+        function set() {
+            x.style.display = "none";
+            darkermenu.style.display = "none";
+            buy.style.filter = "";
+            x.style.animation = "buyup 0.3s";
+
+
+        }
+
+
+
+
+    } else {
+        x.style.display = "block";
+        darkermenu.style.display = "block";
+        buy.style.filter = "invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%)";
+
+
+
+
+
+
+
+    }
+}
+
 function usericon() {
     var x = document.getElementById("menuId");
     var body2 = document.getElementById("bodyId");
@@ -197,13 +236,25 @@ function setPriceCookies() {
 }
 
 
-function setHtml() {
-    document.getElementById("profitId").innerHTML = "Profit: €" + getCookie("profit");
-    document.getElementById("sharesId").innerHTML = "Shares: " + getCookie("shares");
-    document.getElementById("priceId").innerHTML = "Current price: €" + getCookie("price");
-    document.getElementById("dateId").innerHTML = "Updated: " + getCookie("date");
-    document.getElementById("dateId").innerHTML = "Updated: " + getCookie("date");
-    document.getElementById("updateId").innerHTML = "Updated: " + getCookie("update");
+function setHtml(page) {
+
+    if (page == "index") {
+        arrowRotation()
+        setGraphHtml()
+
+        document.getElementById("profitId").innerHTML = "Profit: €" + getCookie("profit");
+        document.getElementById("sharesId").innerHTML = "Shares: " + getCookie("shares");
+        document.getElementById("priceId").innerHTML = "Current price: €" + getCookie("price");
+        document.getElementById("dateId").innerHTML = "Updated: " + getCookie("date");
+        document.getElementById("dateId").innerHTML = "Updated: " + getCookie("date");
+        document.getElementById("updateId").innerHTML = "Last updated: " + getCookie("update");
+        document.getElementById("buyinfo").innerHTML = "Current price: € " + getCookie("price");
+    }
+    else {
+        document.getElementById("updateId").innerHTML = "Last updated: " + getCookie("update");
+        document.getElementById("buyinfo").innerHTML = "Current price: € " + getCookie("price");
+    }
+
 
 }
 
@@ -218,8 +269,7 @@ function isMissing() {
 }
 
 
-function setUp() {
-
+function setUp(page) {
     if (isUpdate() || isMissing()) {
         setUpdateCookies()
         setPriceCookies()
@@ -230,9 +280,8 @@ function setUp() {
     }
 
 
-    arrowRotation()
-    setHtml()
-    setGraphHtml()
+    setHtml(page)
+
 
 
 

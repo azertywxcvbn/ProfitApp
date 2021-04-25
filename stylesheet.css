@@ -32,11 +32,11 @@ footer{
     bottom: 0%;
     width: 100%;
     font-size: x-large;
-    height: 100px;
+    height: 70px;
     color: white;
     border-radius: 15px 15px 0px 0px;
 
-  
+    z-index: 10;
     /* background-image: linear-gradient(to bottom right, #667eea, #764ba2); */
     box-shadow: 2px 2px 7px 01px rgba(0,0,0,0.8);
 }
@@ -60,10 +60,10 @@ footer{
 }
 nav{
     position: fixed;
-    z-index: 10;
+    z-index: 3;
     width: 100%;
     font-size: x-large;
-    height: 100px;
+    height: 80px;
     color: white;
     border-radius: 0px 0px 15px 15px;
     /* background-image: linear-gradient(to bottom right, #667eea, #764ba2); */
@@ -98,6 +98,108 @@ li{
     }
    
 
+}
+
+.darkermenu1{
+    position: fixed;
+    display: none;
+    z-index: 4;
+    bottom: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: .3;
+}
+.MenuBuy{
+    display: none;
+    border-radius: 35px 35px 0px 0px;
+    height: 60%;
+    width: 100%;
+    position: fixed;
+    top: 30%;
+    z-index: 5;
+    background-color: #2B2E4A;
+    animation: buyup 0.3s ;
+}
+
+
+@keyframes buyup{
+    0%{
+        
+        top: 100%;
+
+    }
+    100%{
+      
+        top: 30%;
+    }  
+   
+
+}
+@keyframes buydown{
+    0%{
+        
+        top: 30%;
+
+    }
+    100%{
+      
+        top: 100%;
+    }  
+   
+
+}
+.buyform{
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.buyform input[type="number"]{
+    width: 50%;
+    color: white;
+    background-color: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-image-source:  linear-gradient(to bottom right, #667eea, #764ba2);
+    border-width: 3px;
+    border-image-slice: 1;
+   
+}
+
+.buyform input[type="number"]:focus{
+    outline: none;
+}
+.textcenter{
+    color: white;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.buyform input[type="submit"]{
+    color: white;
+    border: none;
+    width: 40%;
+    margin-top: 20px;
+    border-radius: 15px;
+    height: 40px;
+}
+.buyform input[type="submit"] {background-image: linear-gradient(to right, #876df5 0%, #8f94fb 51%, #a8c0ff 100%)}
+buyform input[type="submit"]:focus{
+    outline: none;
+}
+.buytext{
+    margin-top: 20px;
+    width: 100%;
+}
+.centerbuy{
+    color: white;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
 }
 .MenuInfo{
     display: none;
@@ -169,6 +271,7 @@ li{
     margin-top: 20px;
   }
 .active{
+   
     filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%); 
 
 }
