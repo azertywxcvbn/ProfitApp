@@ -414,10 +414,13 @@ li{
 .border2{
     border-radius: 0px 15px 15px 0px;
 }
+
+.noscrol{
+    overflow: hidden;
+}
 th{
     
     background-color: #667eea;
-    /* background-image: linear-gradient(to bottom right, , #764ba2); */
     height:30px;
     
 }
