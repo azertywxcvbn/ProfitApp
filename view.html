@@ -19,6 +19,8 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="main.js"></script>
     <script src="graph.js"></script>
+    <script src="view.js"></script>
+
     <link rel="manifest" href="site.webmanifest" />
     <link rel="apple-touch-icon" href="splashscreen/apple-icon-180.png">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -102,17 +104,21 @@
         </nav>
 
         <section class="cardgrid">
-            <div class="card1">
-                <div class="containercard">
-                    <h4 class="center fontbig">Bought shares </h4>
+            <div class="cardtable">
+                <table>
 
-                    <div class="gridprofit">
-                        <p class="gridprofittext" id="profitId"> </p>
-                        <p class="gridprofittex2" id="sharesId"></P>
+                    <tr>
+                        <th class="border1">Price</th>
+                        <th class="border2">Amount</th>
 
+                    </tr>
+                    <div id="tableId">
 
                     </div>
-                </div>
+
+
+
+                </table>
             </div>
         </section>
 

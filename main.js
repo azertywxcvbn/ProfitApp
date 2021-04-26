@@ -90,6 +90,7 @@ function setProfitStorage() {
             refBought.on("value", gotData);
             function gotData(data) {
                 bought = data.val()
+
                 total = sum = bought.reduce((a, b) => {
                     return a + b;
                 });;
@@ -119,6 +120,49 @@ function setSharesStorage() {
     }
 }
 
+
+function setDateStorage() {
+
+    refDate.on("value", gotData, errorData);
+    function gotData(data) {
+        var date = data.val();
+        localStorage.setItem("date", date);
+
+
+    }
+    function errorData(err) {
+        console.log("error");
+        console.log(err);
+    }
+}
+
+
+function setPriceStorage() {
+    refPrice.on("value", gotData, errorData);
+    function gotData(data) {
+        price = data.val();
+        localStorage.setItem("price", price);
+
+    }
+
+    function errorData(err) {
+        console.log("error");
+        console.log(err);
+    }
+}
+
+function setBoughtStorage() {
+    refBought.on("value", gotData, errorData);
+    function gotData(data) {
+        var bought = data.val();
+        localStorage.setItem("bought", JSON.stringify(bought));
+    }
+    function errorData(err) {
+        console.log("error");
+        console.log(err);
+    }
+}
+
 function buyicon() {
     var x = document.getElementById("buyId");
     var buy = document.getElementById("buynavId");
@@ -137,23 +181,11 @@ function buyicon() {
             darkermenu.style.display = "none";
             buy.style.filter = "";
             x.style.animation = "buyup 0.3s";
-
-
         }
-
-
-
-
     } else {
         x.style.display = "block";
         darkermenu.style.display = "block";
         buy.style.filter = "invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%)";
-
-
-
-
-
-
 
     }
 }
@@ -174,61 +206,60 @@ function usericon() {
             body.style.overflow = "";
             menuId.style.animation = "menuup 0.3s";
         }
-
-
-
-
     } else {
         x.style.display = "block";
         darkermenu.style.display = "block";
         body.style.overflow = "hidden";
-
-
-
-
-
     }
 }
 
+function getOccurrence(array, value) {
+    var count = 0;
+    array.forEach((v) => (v === value && count++));
+    return count;
+}
 
-function setDateStorage() {
-
-    refDate.on("value", gotData, errorData);
-    function gotData(data) {
-        var date = data.val();
-        localStorage.setItem("date", date);
-
-
+function equalsArray(value, array) {
+    for (let i in array) {
+        if (array[i] === value) {
+            return true;
+        }
     }
-    function errorData(err) {
-        console.log("error");
-        console.log(err);
+    return false;
+}
+
+
+function groupBoughtStorage() {
+
+    var array = JSON.parse(localStorage.getItem("bought"));
+    var dict = [];
+    var arrayLoop = [];
+    for (let i in array) {
+        var iValue = array[i];
+        if (!equalsArray(iValue, arrayLoop)) {
+
+
+            var iCount = getOccurrence(array, iValue)
+            dict.push({
+                price: iValue,
+                amount: iCount
+            });
+            arrayLoop.push(iValue);
+        }
     }
+
+    localStorage.setItem("boughtDict", JSON.stringify(dict));
 }
 
 
 
-
-function setPriceStorage() {
-    refPrice.on("value", gotData, errorData);
-    function gotData(data) {
-        price = data.val();
-        localStorage.setItem("price", price);
-
-    }
-
-    function errorData(err) {
-        console.log("error");
-        console.log(err);
-    }
-}
 
 
 function setHtml(page) {
 
     if (page == "index") {
-        arrowRotation()
-        setGraphHtml()
+        arrowRotation();
+        setGraphHtml();
 
         document.getElementById("profitId").innerHTML = "Profit: €" + localStorage.getItem("profit");
         document.getElementById("sharesId").innerHTML = "Shares: " + localStorage.getItem("shares");
@@ -238,16 +269,18 @@ function setHtml(page) {
         document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
     }
     else {
+        setViewHtml()
         document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
         document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
     }
+
 
 
 }
 
 
 function isMissing() {
-    if (localStorage.getItem("profit") == null || localStorage.getItem("shares") == null || localStorage.getItem("price") == null || localStorage.getItem("date") == null || localStorage.getItem("graphInfo") == null || localStorage.getItem("update") == null) {
+    if (localStorage.getItem("bought") == null || localStorage.getItem("profit") == null || localStorage.getItem("shares") == null || localStorage.getItem("price") == null || localStorage.getItem("date") == null || localStorage.getItem("graphInfo") == null || localStorage.getItem("update") == null) {
         return true
 
     }
@@ -260,20 +293,14 @@ function setUp(page) {
 
 
     if (isUpdate() || isMissing()) {
-        setUpdateStorage()
-        setPriceStorage()
-        setDateStorage()
-        setSharesStorage()
-        setProfitStorage()
-        setGrapInfoStorage()
+        setUpdateStorage();
+        setPriceStorage();
+        setDateStorage();
+        setSharesStorage();
+        setProfitStorage();
+        setGrapInfoStorage();
+        setBoughtStorage();
     }
-
-
-    setHtml(page)
-
-
-
-
-
-
+    groupBoughtStorage()
+    setHtml(page);
 }

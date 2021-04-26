@@ -119,7 +119,6 @@ li{
     top: 30%;
     z-index: 5;
     background-color: #2B2E4A;
-    -webkit-transform: translateZ(0);
     animation: buyup 0.3s ;
 }
 
@@ -208,7 +207,6 @@ li{
     top: 50%;
     z-index: 20;
     background-color: #2B2E4A;
-    -webkit-transform: translateZ(0);
     animation: menuup 0.3s ;
 }
 @keyframes menuup{
@@ -282,7 +280,18 @@ li{
     grid-gap: 30px;
 }
 
-
+.cardtable{
+    color: white;
+    grid-column-start: 2;
+    margin-top: 150px;
+    margin-bottom: 10px; 
+    min-width: 300px;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    min-height: 150px;  
+    height: auto;
+}
 
 .card1 {
     color: white;
@@ -399,29 +408,33 @@ li{
    
 }
 
-.table{
-    color: white;
-    background-image: linear-gradient(to bottom right, #667eea, #764ba2);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius: 15px;
-    margin-bottom: 10px; 
-    margin-top: 150px;
-    min-height: 150px;  
-    max-height: 100px;
-  
-  
+.border1{
+    border-radius: 15px 0px 0px 15px;
 }
-.tablesection{
-    padding-top: 30px;
-
+.border2{
+    border-radius: 0px 15px 15px 0px;
 }
-table, th, td {
-    border: 0.1px solid rgb(245, 245, 245);
-  }
+th{
+    
+    background-color: #667eea;
+    /* background-image: linear-gradient(to bottom right, , #764ba2); */
+    height:30px;
+    
+}
 
+td,th{
+    height:40px;
+}
+
+td{
+    
+    text-align: center;
+}
 table{
     width:100%;
+    border-collapse: collapse;
 }
+
 @media(max-width:400px){
     
     .card1 {
