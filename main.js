@@ -24,30 +24,14 @@ var graphInfo = database.ref("graph");
 var ref = database.ref("/");
 var datafile = "not";
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
 
 
 function isUpdate() {
-    var update = getCookie("update")
-    var updateDate = new Date("1970-01-01 " + update)
+    var update = localStorage.getItem("update");
+    var updateDate = new Date("1970-01-01 " + update);
     var currentDate = new Date();
     if (update == null) {
-        setDateCookies()
+        setDateStorage()
     }
     if (updateDate.getHours() + 4 <= currentDate.getHours()) {
         return true;
@@ -56,18 +40,21 @@ function isUpdate() {
 }
 
 
-function setUpdateCookies() {
+function setUpdateStorage() {
     var currentDate = new Date();
     let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
-    document.cookie = "update=" + time;
+    localStorage.setItem("update", time);
+
 
 }
 
-function setGrapInfoCookies() {
+function setGrapInfoStorage() {
     graphInfo.on("value", gotData, errorData);
     function gotData(data) {
         var data = data.val();
-        document.cookie = "graphInfo=" + JSON.stringify(data);
+        localStorage.setItem("graphInfo", JSON.stringify(data));
+
+
     }
     function errorData(err) {
         console.log("error");
@@ -78,7 +65,7 @@ function setGrapInfoCookies() {
 
 
 function arrowRotation() {
-    var profit = getCookie("profit")
+    var profit = localStorage.getItem("profit")
     profit = Number(profit)
 
     if (profit > 0) {
@@ -91,7 +78,7 @@ function arrowRotation() {
     }
 }
 
-function setProfitCookies() {
+function setProfitStorage() {
     refPrice.on("value", gotData);
     function gotData(data) {
         price = data.val()
@@ -108,8 +95,8 @@ function setProfitCookies() {
                 });;
 
                 profit = price * shares - total.toFixed(2);
-                console.log("eeee")
-                document.cookie = "profit=" + profit.toFixed(2);
+                localStorage.setItem("profit", profit.toFixed(2));
+
 
             }
         }
@@ -119,13 +106,12 @@ function setProfitCookies() {
 
 }
 
-function setSharesCookies() {
+function setSharesStorage() {
 
     refShares.on("value", gotData, errorData);
     function gotData(data) {
         var shares = data.val();
-
-        document.cookie = "shares=" + shares;
+        localStorage.setItem("shares", shares);
     }
     function errorData(err) {
         console.log("error");
@@ -205,12 +191,13 @@ function usericon() {
 }
 
 
-function setDateCookies() {
+function setDateStorage() {
 
     refDate.on("value", gotData, errorData);
     function gotData(data) {
         var date = data.val();
-        document.cookie = "date=" + date;
+        localStorage.setItem("date", date);
+
 
     }
     function errorData(err) {
@@ -222,11 +209,12 @@ function setDateCookies() {
 
 
 
-function setPriceCookies() {
+function setPriceStorage() {
     refPrice.on("value", gotData, errorData);
     function gotData(data) {
         price = data.val();
-        document.cookie = "price=" + price;
+        localStorage.setItem("price", price);
+
     }
 
     function errorData(err) {
@@ -242,17 +230,16 @@ function setHtml(page) {
         arrowRotation()
         setGraphHtml()
 
-        document.getElementById("profitId").innerHTML = "Profit: €" + getCookie("profit");
-        document.getElementById("sharesId").innerHTML = "Shares: " + getCookie("shares");
-        document.getElementById("priceId").innerHTML = "Current price: €" + getCookie("price");
-        document.getElementById("dateId").innerHTML = "Updated: " + getCookie("date");
-        document.getElementById("dateId").innerHTML = "Updated: " + getCookie("date");
-        document.getElementById("updateId").innerHTML = "Last updated: " + getCookie("update");
-        document.getElementById("buyinfo").innerHTML = "Current price: € " + getCookie("price");
+        document.getElementById("profitId").innerHTML = "Profit: €" + localStorage.getItem("profit");
+        document.getElementById("sharesId").innerHTML = "Shares: " + localStorage.getItem("shares");
+        document.getElementById("priceId").innerHTML = "Current price: €" + localStorage.getItem("price");
+        document.getElementById("dateId").innerHTML = "Updated: " + localStorage.getItem("date");
+        document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
+        document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
     }
     else {
-        document.getElementById("updateId").innerHTML = "Last updated: " + getCookie("update");
-        document.getElementById("buyinfo").innerHTML = "Current price: € " + getCookie("price");
+        document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
+        document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
     }
 
 
@@ -260,7 +247,7 @@ function setHtml(page) {
 
 
 function isMissing() {
-    if (getCookie("profit") == "" || getCookie("shares") == "" || getCookie("price") == "" || getCookie("date") == "" || getCookie("graphInfo") == "" || getCookie("update") == "") {
+    if (localStorage.getItem("profit") == null || localStorage.getItem("shares") == null || localStorage.getItem("price") == null || localStorage.getItem("date") == null || localStorage.getItem("graphInfo") == null || localStorage.getItem("update") == null) {
         return true
 
     }
@@ -270,13 +257,15 @@ function isMissing() {
 
 
 function setUp(page) {
+
+
     if (isUpdate() || isMissing()) {
-        setUpdateCookies()
-        setPriceCookies()
-        setDateCookies()
-        setSharesCookies()
-        setProfitCookies()
-        setGrapInfoCookies()
+        setUpdateStorage()
+        setPriceStorage()
+        setDateStorage()
+        setSharesStorage()
+        setProfitStorage()
+        setGrapInfoStorage()
     }
 
 

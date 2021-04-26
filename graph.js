@@ -1,6 +1,6 @@
 function setGraphHtml() {
 
-    var mydata = getCookie("graphInfo")
+    var mydata = localStorage.getItem("graphInfo")
 
     if (mydata !== "") {
 
