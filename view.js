@@ -10,7 +10,6 @@ function setViewHtml() {
          
         </tr>`;
     }
-    console.log(result)
     let table = document.querySelector("table")
     table.innerHTML += result;
 }

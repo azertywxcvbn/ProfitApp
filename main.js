@@ -89,11 +89,12 @@ function setProfitStorage() {
 
             refBought.on("value", gotData);
             function gotData(data) {
+                total = 0
                 bought = data.val()
+                for (i in bought) {
+                    total += bought[i]["price"]
+                }
 
-                total = sum = bought.reduce((a, b) => {
-                    return a + b;
-                });;
 
                 profit = price * shares - total.toFixed(2);
                 localStorage.setItem("profit", profit.toFixed(2));
@@ -233,22 +234,26 @@ function groupBoughtStorage() {
 
     var array = JSON.parse(localStorage.getItem("bought"));
     var dict = [];
-    var arrayLoop = [];
-    for (let i in array) {
-        var iValue = array[i];
-        if (!equalsArray(iValue, arrayLoop)) {
+    var checkArray = [];
+    var result = [];
 
-
-            var iCount = getOccurrence(array, iValue)
-            dict.push({
-                price: iValue,
-                amount: iCount
+    for (i in array) {
+        dict.push(array[i]["price"])
+    }
+    console.log(checkArray)
+    for (i in dict) {
+        var amount = getOccurrence(dict, dict[i])
+        if (!equalsArray(dict[i], checkArray)) {
+            name = dict[i]
+            result.push({
+                price: dict[i],
+                amount: amount
             });
-            arrayLoop.push(iValue);
+            checkArray.push(dict[i])
         }
     }
 
-    localStorage.setItem("boughtDict", JSON.stringify(dict));
+    localStorage.setItem("boughtDict", JSON.stringify(result));
 }
 
 
@@ -260,7 +265,6 @@ function setHtml(page) {
     if (page == "index") {
         arrowRotation();
         setGraphHtml();
-
         document.getElementById("profitId").innerHTML = "Profit: €" + localStorage.getItem("profit");
         document.getElementById("sharesId").innerHTML = "Shares: " + localStorage.getItem("shares");
         document.getElementById("priceId").innerHTML = "Current price: €" + localStorage.getItem("price");
@@ -282,7 +286,6 @@ function setHtml(page) {
 function isMissing() {
     if (localStorage.getItem("bought") == null || localStorage.getItem("profit") == null || localStorage.getItem("shares") == null || localStorage.getItem("price") == null || localStorage.getItem("date") == null || localStorage.getItem("graphInfo") == null || localStorage.getItem("update") == null) {
         return true
-
     }
     return false
 
@@ -290,7 +293,6 @@ function isMissing() {
 
 
 function setUp(page) {
-
 
     if (isUpdate() || isMissing()) {
         setUpdateStorage();
