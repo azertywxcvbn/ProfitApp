@@ -174,7 +174,7 @@
 
             <form class="buyform" id="buyform">
                 <input type="number" name="inputid" id="inputid" value="0" step="1" min="0">
-                <input name="buy" id="buyidsubmit" class="buybutton" value="Buy" type="button" onclick="test()">
+                <input name="buy" id="buyidsubmit" class="buybutton" value="Buy" type="button" onclick="buyShare()">
             </form>
 
         </div>
@@ -197,6 +197,10 @@
                 <p>The database updates every 4 hours.</p>
                 <p id="updateId"></p>
                 <p>Version 1.0</p>
+                <br>
+                <p><a href="javascript:updateSite()" id="foreUpdate" class="link">
+                        Click here for force update
+                    </a></p>
             </section>
 
         </div>

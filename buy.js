@@ -1,6 +1,6 @@
 var refBought = database.ref("bought");
 
-function test() {
+function buyShare() {
 
     var input = document.querySelector('#inputid').value;
     var price = localStorage.getItem("price");
@@ -8,9 +8,10 @@ function test() {
     var amountNow = localStorage.getItem("shares")
     var boughtNow1 = localStorage.getItem("bought")
     var boughtNow = JSON.parse(boughtNow1)
-    console.log(boughtNow)
+
     var shares = Number(amountNow) + Number(input)
     var now = boughtNow.length
+    console.log(now)
 
     toDatabase()
     function toDatabase() {
@@ -20,7 +21,6 @@ function test() {
         });
 
         for (i = 0; i < Number(input); i++) {
-            console.log("ee")
             now += i
             firebase.database().ref('/bought/' + now).update({
                 price: Number(price)
@@ -30,12 +30,10 @@ function test() {
 
     }
     setUpdateStorage();
-    setPriceStorage();
-    setDateStorage();
     setSharesStorage();
     setProfitStorage();
-    setGrapInfoStorage();
     setBoughtStorage();
+    // window.location.replace('bought.html');
 
 
 

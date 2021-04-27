@@ -240,7 +240,6 @@ function groupBoughtStorage() {
     for (i in array) {
         dict.push(array[i]["price"])
     }
-    console.log(checkArray)
     for (i in dict) {
         var amount = getOccurrence(dict, dict[i])
         if (!equalsArray(dict[i], checkArray)) {
@@ -272,13 +271,15 @@ function setHtml(page) {
         document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
         document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
     }
+    else if (page == "bought") {
+        document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
+        document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
+    }
     else {
         setViewHtml()
         document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
         document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
     }
-
-
 
 }
 
@@ -291,18 +292,20 @@ function isMissing() {
 
 }
 
+function updateSite() {
+    setUpdateStorage();
+    setPriceStorage();
+    setDateStorage();
+    setSharesStorage();
+    setProfitStorage();
+    setGrapInfoStorage();
+    setBoughtStorage();
+}
 
 function setUp(page) {
-
     if (isUpdate() || isMissing()) {
-        setUpdateStorage();
-        setPriceStorage();
-        setDateStorage();
-        setSharesStorage();
-        setProfitStorage();
-        setGrapInfoStorage();
-        setBoughtStorage();
+        updateSite();
     }
-    groupBoughtStorage()
+    groupBoughtStorage();
     setHtml(page);
 }
