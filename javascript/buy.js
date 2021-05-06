@@ -1,5 +1,6 @@
 var refBought = database.ref("bought");
 
+
 function buyShare() {
 
     var input = document.querySelector('#inputid').value;
