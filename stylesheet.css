@@ -404,6 +404,9 @@ li{
 .empty{
     padding-bottom: 100px;
 }
+.empty2{
+    padding-bottom: 100%;
+}
 
 .rotateup{
     display: flex;
