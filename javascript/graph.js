@@ -34,6 +34,8 @@ function setGraphHtml() {
                 colors: ['white'],
                 width: 350,
                 height: 150,
+                pointSize: 8,
+
                 curveType: 'function',
                 legend: { position: 'bottom', textStyle: { color: 'white' } },
                 lineWidth: 3,
@@ -45,11 +47,13 @@ function setGraphHtml() {
                     }
                 },
                 vAxis: {
+
                     textStyle: { color: 'white' },
                     color: 'white',
                     gridlines: {
                         color: 'transparent'
-                    }
+                    },
+
 
                 }
 
