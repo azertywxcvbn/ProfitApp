@@ -164,6 +164,16 @@ function setBoughtStorage() {
     }
 }
 
+function getTotal() {
+    var price = JSON.parse(localStorage.getItem("price"));
+    var amount = JSON.parse(localStorage.getItem("shares"));
+    var total = price * amount
+    localStorage.setItem("total", total);
+
+    console.log(total)
+
+}
+
 function buyicon() {
     var x = document.getElementById("buyId");
     var buy = document.getElementById("buynavId");
@@ -264,12 +274,15 @@ function setHtml(page) {
     if (page == "index") {
         arrowRotation();
         setGraphHtml();
-        document.getElementById("profitId").innerHTML = "Profit: €" + localStorage.getItem("profit");
-        document.getElementById("sharesId").innerHTML = "Shares: " + localStorage.getItem("shares");
+        document.getElementById("profitId").innerHTML = "€" + localStorage.getItem("profit");
+        document.getElementById("sharesId").innerHTML = localStorage.getItem("shares") + "x";
         document.getElementById("priceId").innerHTML = "Current price: €" + localStorage.getItem("price");
         document.getElementById("dateId").innerHTML = "Updated: " + localStorage.getItem("date");
         document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
         document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
+        document.getElementById("totalId").innerHTML = localStorage.getItem("total");
+
+
     }
     else if (page == "bought") {
         document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
@@ -293,6 +306,7 @@ function isMissing() {
 }
 
 function updateSite() {
+    getTotal()
     setUpdateStorage();
     setPriceStorage();
     setDateStorage();
@@ -303,6 +317,7 @@ function updateSite() {
 }
 
 function setUp(page) {
+
     if (isUpdate() || isMissing()) {
         updateSite();
     }

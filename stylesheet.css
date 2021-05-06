@@ -13,21 +13,11 @@ html {
 }
 body{
     font-family: Roboto;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
     background-color: #2B2E4A;
-   
-   
 }
 
 footer{
-  
+    
     position: fixed;
     bottom: 0%;
     width: 100%;
@@ -59,6 +49,7 @@ footer{
     grid-template-columns: 3fr 1fr;
 }
 nav{
+    top: 0px;
     position: fixed;
     z-index: 3;
     width: 100%;
@@ -85,6 +76,27 @@ ul{
 li{
    
     list-style-type: none;
+}
+.fontsummary{
+    font-size: 20px;
+}
+.summarysection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.summaryend{
+    margin-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    margin-right: 10px;
+}
+.summary{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
 }
 
 @keyframes menudown{
@@ -233,7 +245,9 @@ li{
 
 }
 
-
+.chartsection{
+    margin-bottom: 50px;
+}
 .menutext{
     
     line-height: 30px;
@@ -276,11 +290,8 @@ li{
 }
 
 .cardgrid{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    padding: 10px;
-    grid-gap: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .cardtable{
@@ -298,50 +309,100 @@ li{
 
 .card1 {
     color: white;
-    grid-column-start: 2;
-    margin-top: 150px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-image: linear-gradient(to bottom right, #667eea, #764ba2);
+    padding-top: 100px;
     border-radius: 15px;
-    margin-bottom: 10px; 
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 150px;  
-    max-height: 100px;
+    margin-bottom: 30px; 
+    min-width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 50px;  
+    max-height: 80px;
 
 }
-
+.profitcard{
+    display: flex;
+    align-items: center;
+   
+    
+    width: 150px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #34385a;
+}
+.textinfo{
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+}
+.sharescard{
+    display: flex;
+    align-items: center;
+   
+    width: 150px;
+    height: 60px;
+    
+    border-radius: 20px;
+    background-color: #34385a;
+}
+.textsmaller{
+    font-size: 15px;
+}
+.fontbold{
+    font-weight: bold;
+}
+.infocards{
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+    
+    justify-items: center;
+}
+.icons{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.roundicons{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #667eea73;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+}
+.roundicons2{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #764ba263;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+}
 .card2 {
     color: white;
-    grid-column-start: 2;
-    grid-row-start: 2;
     
+    border-color: #9ecaed;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-image: linear-gradient(to bottom right, #667eea, #764ba2);
+    background-image: linear-gradient(to bottom right, #667eea, #764ba2);  
     border-radius: 15px;
-
-    min-width: 300px;
-    max-width: 30px;
+    min-width: auto;
+   
+    margin-left: 10px;
+    margin-right: 10px;
     min-height: 150px;  
     max-height: 100px;
 }
 
-.card3 {
-    color: white;
-    grid-column-start: 2;
- 
-    grid-row-start:  3;
-    grid-row-end: 3;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-image: linear-gradient(to bottom right, #667eea, #764ba2);
-    border-radius: 15px;
-    margin-top: -150px;
-   
-    min-width: 300px;
-    max-width: 30px;
-    min-height: 150px;  
-    max-height: 100px;
-
+.empty{
+    padding-bottom: 100px;
 }
 
 .rotateup{
@@ -370,17 +431,11 @@ li{
 }
 .gridprofittext{
     font-size: large;
-    grid-column-start: 1;
-    grid-column-end: 3;
+   
 }
 
 .gridprofittex2{
-    margin-top: 10px;
     font-size: large;
-    grid-row-start: 2;
-    grid-column-start: 1;
-    grid-column-end: 2;
-
 }
 .gridinfotext{
     font-size: large;
@@ -441,24 +496,7 @@ table{
     border-collapse: collapse;
 }
 
-@media(max-width:400px){
-    
-    .card1 {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        min-width: 100%;
-    }
-    .card2 {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        min-width: 100%;
-    }
-    .card3 {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        min-width: 100%;
-    }
-}
+
 
 @media screen and  (display-mode:standalone){
     header{

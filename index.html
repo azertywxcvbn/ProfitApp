@@ -105,38 +105,61 @@
 
 
 
-        <section class="cardgrid">
-            <div class="card1">
-                <div class="containercard">
-                    <h4 class="center fontbig">Profit </h4>
 
-                    <div class="gridprofit">
-                        <p class="gridprofittext" id="profitId"> </p>
-                        <p class="gridprofittex2" id="sharesId"></P>
+        <div class="card1">
+            <div class="containercard">
+                <p class="center fontsummary">Summary </p>
+                <section class="summarysection">
+                    <p class="summaryend">€</p>
+                    <p id="totalId" class="summary fontbold"></p>
 
+                </section>
+
+            </div>
+        </div>
+        <div class="infocards">
+            <section class="profitcard">
+
+                <div class="roundicons2">
+                    <div class="icons">
                         <img src="" alt="foto-arrow" class="" id="arrowId">
                     </div>
                 </div>
-            </div>
-            <div class="card2">
-                <div class="containercard">
-                    <h4 class="center fontbig">Info </h4>
-                    <div class="gridprofit">
-                        <p class="gridinfotext" id='priceId'> </p>
+                <section class="textinfo">
+                    <p class="textsmaller">Profit:</p>
+                    <p class="gridprofittext fontbold" id="profitId"> </p>
+                </section>
 
-                        <p class="gridinfotext2" id="dateId"></p>
+            </section>
+            <section class="sharescard">
+                <div class="roundicons">
+                    <div class="icons">
+
+                        <img src="img/boxes.png" alt="foto-arrow" id="arrowId">
                     </div>
                 </div>
-            </div>
-            <div class="card3">
-
-
-                <div id="curve_chart" class="chart"></div>
-
-
-            </div>
-
+                <section class="textinfo">
+                    <p class="textsmaller">Shares:</p>
+                    <p class="gridprofittex2 fontbold" id="sharesId"></P>
+                </section>
+            </section>
+        </div>
+        <section class="chartsection">
+            <div id="curve_chart" class="chart"></div>
         </section>
+        <div class="card2">
+            <div class="containercard">
+                <h4 class="center fontbig">Info </h4>
+                <div class="gridprofit">
+                    <p class="gridinfotext" id='priceId'> </p>
+
+                    <p class="gridinfotext2" id="dateId"></p>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <footer class="colorDark">
             <ul>
@@ -182,6 +205,7 @@
 
 
     </section>
+
     <section>
 
 
@@ -205,6 +229,7 @@
 
         </div>
     </section>
+    <section class="empty"></section>
 
 </body>
 
