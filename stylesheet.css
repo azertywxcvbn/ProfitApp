@@ -30,8 +30,9 @@ footer{
     /* background-image: linear-gradient(to bottom right, #667eea, #764ba2); */
     box-shadow: 2px 2px 7px 01px rgba(0,0,0,0.8);
 }
+
 ::-webkit-scrollbar{
-    display: none;
+    -webkit-appearance: none;
 }
 
 
