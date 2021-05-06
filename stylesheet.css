@@ -37,19 +37,6 @@ footer{
     box-shadow: 2px 2px 7px 01px rgba(0,0,0,0.8);
 }
 
-::-webkit-scrollbar-track {
-   
-    background-color: transparent;
-  }
-  
-  ::-webkit-scrollbar {
-    background-color: transparent;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-   
-    background-color: transparent;
-  }
 
 .colorDark{
     background-color: #2B2E4A;
@@ -59,9 +46,7 @@ footer{
 .centerText{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-
-   
+    margin-top: 20px; 
 }
 
 .gridNav{
@@ -69,6 +54,7 @@ footer{
     grid-template-columns: 3fr 1fr;
 }
 nav{
+    height: auto;
     top: 0px;
     position: fixed;
     z-index: 3;
