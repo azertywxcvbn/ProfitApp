@@ -14,9 +14,10 @@ html {
 body{
     font-family: Roboto;
     background-color: #2B2E4A;
+    overflow: hidden;
 }
-.body::-webkit-scrollbar{
-    display: none;
+.body{
+    overflow: scroll;
 }
 .body::-webkit-scrollbar-thumb{
     display: none;
