@@ -31,20 +31,9 @@ footer{
     box-shadow: 2px 2px 7px 01px rgba(0,0,0,0.8);
 }
 ::-webkit-scrollbar{
-    width: 25px;
-}
-::-webkit-scrollbar-track{
-    border:7px solid red;
-    box-shadow: inset 0 0 2.5px rgba(0,0,0,0.5);
+    display: none;
 }
 
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(
-        45deg,
-        #06dee1,
-        #79ff6c
-    );
-}
 
 .colorDark{
     background-color: #2B2E4A;
