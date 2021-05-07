@@ -31,7 +31,7 @@ function setGraphHtml() {
             ]);
 
             var options = {
-                colors: ['white'],
+                colors: ['#AF8FE9'],
                 width: 350,
                 height: 150,
                 pointSize: 8,
