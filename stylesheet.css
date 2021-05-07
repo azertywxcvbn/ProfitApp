@@ -13,7 +13,7 @@ html {
 }
 body{
     font-family: Roboto;
-    background-color: #2B2E4A;
+    background-color: #181c2e;
    
 }
 .body{
@@ -30,7 +30,7 @@ footer{
     font-size: x-large;
     height: 70px;
     color: white;
-    border-radius: 15px 15px 0px 0px;
+    /* border-radius: 15px 15px 0px 0px; */
 
     z-index: 10;
     /* background-image: linear-gradient(to bottom right, #667eea, #764ba2); */
@@ -39,7 +39,7 @@ footer{
 
 
 .colorDark{
-    background-color: #2B2E4A;
+    background-color: #181c2e;
 
 }
 
@@ -62,9 +62,9 @@ nav{
     font-size: x-large;
     height: 80px;
     color: white;
-    border-radius: 0px 0px 15px 15px;
+    /* border-radius: 0px 0px 15px 15px; */
     /* background-image: linear-gradient(to bottom right, #667eea, #764ba2); */
-    box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.8);
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.8);
     
 }
 
@@ -136,7 +136,7 @@ li{
     position: fixed;
     top: 30%;
     z-index: 5;
-    background-color: #2B2E4A;
+    background-color: #181c2e;
     animation: buyup 0.3s ;
 }
 
@@ -224,7 +224,7 @@ li{
     position: fixed;
     top: 50%;
     z-index: 20;
-    background-color: #2B2E4A;
+    background-color: #181c2e;
     animation: menuup 0.3s ;
 }
 @keyframes menuup{
@@ -278,15 +278,10 @@ li{
 }
 
 .iconuser{
-    height: 100%;
-    width: 40px;
+    width: 30px;
 }
 
-.iconUser{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
+
 .active{
     filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%); 
 
@@ -303,7 +298,7 @@ li{
 .cardtable{
     color: white;
     grid-column-start: 2;
-    margin-top: 150px;
+    margin-top: 35px;
     margin-bottom: 10px; 
     min-width: 300px;
     max-width: 300px;
@@ -315,7 +310,7 @@ li{
 
 .card1 {
     color: white;
-    padding-top: 100px;
+    padding-top: 80px;
     border-radius: 15px;
     margin-bottom: 30px; 
     min-width: auto;
@@ -333,7 +328,7 @@ li{
     width: 150px;
     height: 60px;
     border-radius: 20px;
-    background-color: #34385a;
+    background-color: #1f243b;
 }
 .textinfo{
     display: flex;
@@ -348,7 +343,7 @@ li{
     height: 60px;
     
     border-radius: 20px;
-    background-color: #34385a;
+    background-color: #1f243b;
 }
 .textsmaller{
     font-size: 15px;
@@ -394,13 +389,11 @@ li{
 }
 .card2 {
     color: white;
-    
     border-color: #9ecaed;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-image: linear-gradient(to bottom right, #667eea, #764ba2);  
     border-radius: 15px;
     min-width: auto;
-   
     margin-left: 10px;
     margin-right: 10px;
     min-height: 150px;  
@@ -409,9 +402,6 @@ li{
 
 .empty{
     padding-bottom: 100px;
-}
-.empty2{
-    padding-bottom: 100%;
 }
 
 .rotateup{

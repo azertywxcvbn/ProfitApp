@@ -19,6 +19,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="javascript/main.js"></script>
     <script src="javascript/graph.js"></script>
+    <script src="javascript/view.js"></script>
     <script src="javascript/buy.js"></script>
     <script src="javascript/mobile.js">giveMobile()</script>
     <link rel="manifest" href="site.webmanifest" />
@@ -86,23 +87,21 @@
 
 </head>
 
-<body onload="setUp('index') " id="body">
+<body onload="setUp()" id="body">
 
     <div id="bodyId" class="body">
         <nav class="colorDark">
 
-            <div class="gridNav">
-                <section>
-                    <h1 class="centerText">Profit App</h1>
-                </section>
-                <section>
 
-                    <a onclick="usericon()" class="iconUser">
-                        <img src="img/user.svg" alt="foto-arrow" class="iconuser">
-                    </a>
+            <section>
+                <h1 class="centerText">Profit App</h1>
+            </section>
+            <section>
 
-                </section>
-            </div>
+
+
+            </section>
+
 
         </nav>
 
@@ -161,7 +160,24 @@
             </div>
         </div>
 
+        <section class="cardgrid">
+            <div class="cardtable">
+                <table>
 
+                    <tr>
+                        <th class="border1">Price</th>
+                        <th class="border2">Amount</th>
+
+                    </tr>
+                    <div id="tableId">
+
+                    </div>
+
+
+
+                </table>
+            </div>
+        </section>
 
 
         <footer class="colorDark">
@@ -177,8 +193,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="view.html">
-                        <img src="img/file.svg" alt="foto-arrow" class="iconnav" id="viewnavId">
+                    <a onclick="usericon()">
+                        <img src="img/user.svg" alt="foto-arrow" class="iconuser">
                     </a>
                 </li>
             </ul>

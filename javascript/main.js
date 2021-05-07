@@ -269,31 +269,17 @@ function groupBoughtStorage() {
 
 
 
-function setHtml(page) {
-
-    if (page == "index") {
-        arrowRotation();
-        setGraphHtml();
-        document.getElementById("profitId").innerHTML = "€" + localStorage.getItem("profit");
-        document.getElementById("sharesId").innerHTML = localStorage.getItem("shares") + "x";
-        document.getElementById("priceId").innerHTML = "Current price: €" + localStorage.getItem("price");
-        document.getElementById("dateId").innerHTML = "Updated: " + localStorage.getItem("date");
-        document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
-        document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
-        document.getElementById("totalId").innerHTML = localStorage.getItem("total");
-
-
-    }
-    else if (page == "bought") {
-        document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
-        document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
-    }
-    else {
-        setViewHtml()
-        document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
-        document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
-    }
-
+function setHtml() {
+    arrowRotation();
+    setGraphHtml();
+    setViewHtml()
+    document.getElementById("profitId").innerHTML = "€" + localStorage.getItem("profit");
+    document.getElementById("sharesId").innerHTML = localStorage.getItem("shares") + "x";
+    document.getElementById("priceId").innerHTML = "Current price: €" + localStorage.getItem("price");
+    document.getElementById("dateId").innerHTML = "Updated: " + localStorage.getItem("date");
+    document.getElementById("updateId").innerHTML = "Last updated: " + localStorage.getItem("update");
+    document.getElementById("buyinfo").innerHTML = "Current price: € " + localStorage.getItem("price");
+    document.getElementById("totalId").innerHTML = localStorage.getItem("total");
 }
 
 
@@ -316,11 +302,10 @@ function updateSite() {
     setBoughtStorage();
 }
 
-function setUp(page) {
-
+function setUp() {
     if (isUpdate() || isMissing()) {
         updateSite();
     }
     groupBoughtStorage();
-    setHtml(page);
+    setHtml();
 }
