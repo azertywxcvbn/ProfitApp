@@ -306,6 +306,8 @@ li{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     min-height: 150px;  
     height: auto;
+    border-color: #667eea73;
+    box-shadow: 0 0 10px #667eea73;
 }
 
 .card1 {
@@ -397,8 +399,8 @@ li{
     margin-right: 10px;
     min-height: 150px;  
     outline: none;
-    border-color: #667eea73;
-    box-shadow: 0 0 10px #667eea73;
+    border-color: #764ba263;
+    box-shadow: 0 0 10px #764ba263;
     max-height: 100px;
 }
 
@@ -495,6 +497,7 @@ td{
 table{
     width:100%;
     border-collapse: collapse;
+    
 }
 
 
