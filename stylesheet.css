@@ -13,7 +13,7 @@ html {
 }
 body{
     font-family: Roboto;
-    background-color: #181c2e;
+    background-color: #131624;
    
 }
 .body{
@@ -39,7 +39,7 @@ footer{
 
 
 .colorDark{
-    background-color: #181c2e;
+    background-color: #131624;
 
 }
 
@@ -136,7 +136,7 @@ li{
     position: fixed;
     top: 30%;
     z-index: 5;
-    background-color: #181c2e;
+    background-color: #131624;
     animation: buyup 0.3s ;
 }
 
