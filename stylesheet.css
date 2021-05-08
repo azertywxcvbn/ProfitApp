@@ -224,7 +224,7 @@ li{
     position: fixed;
     top: 50%;
     z-index: 20;
-    background-color: #181c2e;
+    background-color: #131624;
     animation: menuup 0.3s ;
 }
 @keyframes menuup{
@@ -328,7 +328,7 @@ li{
     width: 150px;
     height: 60px;
     border-radius: 20px;
-    background-color: #1f243b;
+    background-color: #1a1e31;
 }
 .textinfo{
     display: flex;
@@ -343,7 +343,7 @@ li{
     height: 60px;
     
     border-radius: 20px;
-    background-color: #1f243b;
+    background-color: #1a1e31;
 }
 .textsmaller{
     font-size: 15px;
@@ -391,7 +391,7 @@ li{
     color: white;
     border-color: #9ecaed;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #1f243b;
+    background-color: #1a1e31;
     /* background-image: linear-gradient(to bottom right, #667eea, #764ba2);   */
     border-radius: 15px;
     min-width: auto;
