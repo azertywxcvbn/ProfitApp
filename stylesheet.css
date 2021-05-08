@@ -389,8 +389,6 @@ li{
 }
 .card2 {
     color: white;
-    border-color: #9ecaed;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: #1a1e31;
     /* background-image: linear-gradient(to bottom right, #667eea, #764ba2);   */
     border-radius: 15px;
@@ -398,6 +396,9 @@ li{
     margin-left: 10px;
     margin-right: 10px;
     min-height: 150px;  
+    outline: none;
+    border-color: #667eea73;
+    box-shadow: 0 0 10px #667eea73;
     max-height: 100px;
 }
 
