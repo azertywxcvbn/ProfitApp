@@ -44,13 +44,16 @@ function test() {
     var currentDate = new Date();
     var update = localStorage.getItem("update");
 
-    var updateDate = new Date("1970-01-01 " + update);
-    if (updateDate.getHours() + 4 <= currentDate.getHours()) {
+    var e = Number(update.substr(0, 2))
+    console.log(e)
+
+    if (e + 4 <= Number(currentDate.getHours())) {
         document.getElementById("testId").innerHTML = "bigger";
     }
     else {
-        document.getElementById("testId").innerHTML = updateDate.getHours();
-        document.getElementById("testId2").innerHTML = currentDate.getHours();
+
+        document.getElementById("testId").innerHTML = "old: " + e;
+        document.getElementById("testId2").innerHTML = "new: " + currentDate.getHours();
 
     }
 }
@@ -59,8 +62,6 @@ function setUpdateStorage() {
     var currentDate = new Date();
     let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
     localStorage.setItem("update", time);
-
-
 }
 
 function setGrapInfoStorage() {
