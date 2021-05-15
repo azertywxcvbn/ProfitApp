@@ -50,6 +50,7 @@ function test() {
     }
     else {
         document.getElementById("testId").innerHTML = updateDate.getHours();
+        document.getElementById("testId2").innerHTML = currentDate.getHours();
 
     }
 }
