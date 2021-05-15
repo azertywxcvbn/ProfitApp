@@ -39,6 +39,20 @@ function isUpdate() {
     return false;
 }
 
+function test() {
+
+    var currentDate = new Date();
+    var update = localStorage.getItem("update");
+
+    var updateDate = new Date("1970-01-01 " + update);
+    if (updateDate.getHours() + 4 <= currentDate.getHours()) {
+        document.getElementById("testId").innerHTML = "bigger";
+    }
+    else {
+        document.getElementById("testId").innerHTML = updateDate.getHours();
+
+    }
+}
 
 function setUpdateStorage() {
     var currentDate = new Date();
@@ -306,6 +320,7 @@ function setUp() {
     if (isUpdate() || isMissing()) {
         updateSite();
     }
+    test()
     groupBoughtStorage();
     setHtml();
 }

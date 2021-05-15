@@ -1,9 +1,0 @@
-function giveMobile() {
-    return `
-    
-
-  `
-
-
-
-}
