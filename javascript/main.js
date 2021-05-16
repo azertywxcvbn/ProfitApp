@@ -28,12 +28,14 @@ var datafile = "not";
 
 function isUpdate() {
     var update = localStorage.getItem("update");
-    var updateDate = new Date("1970-01-01 " + update);
+
     var currentDate = new Date();
+
+    var e = Number(update.substr(0, 2))
     if (update == null) {
         setDateStorage()
     }
-    if (updateDate.getHours() + 4 <= currentDate.getHours()) {
+    if (e + 4 <= Number(currentDate.getHours())) {
         return true;
     }
     return false;
