@@ -35,30 +35,25 @@ function isUpdate() {
     if (update == null) {
         setDateStorage()
     }
-    if (e + 4 <= Number(currentDate.getHours())) {
+    if (e + 4 <= Number(currentDate.getHours()) || e - 4 > Number(currentDate.getHours())) {
         return true;
     }
     return false;
 }
 
-function test() {
-
+function timeToUpdate() {
     var currentDate = new Date();
     var update = localStorage.getItem("update");
-
     var e = Number(update.substr(0, 2))
-    console.log(e)
-
-    if (e + 4 <= Number(currentDate.getHours())) {
-        document.getElementById("testId").innerHTML = "bigger";
+    if (e + 4 > Number(currentDate.getHours()) || e - 4 < Number(currentDate.getHours())) {
+        document.getElementById("testId").innerHTML = "Time until update: " + e + 4 - Number(currentDate.getHours());
     }
     else {
-
-        document.getElementById("testId").innerHTML = "old: " + e;
-        document.getElementById("testId2").innerHTML = "new: " + currentDate.getHours();
-
+        document.getElementById("testId").innerHTML = "Time until update: 0";
     }
+
 }
+
 
 function setUpdateStorage() {
     var currentDate = new Date();
@@ -324,7 +319,7 @@ function setUp() {
     if (isUpdate() || isMissing()) {
         updateSite();
     }
-    test()
+    timeToUpdate()
     groupBoughtStorage();
     setHtml();
 }
