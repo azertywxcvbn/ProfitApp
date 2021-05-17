@@ -44,9 +44,12 @@ function isUpdate() {
 function timeToUpdate() {
     var currentDate = new Date();
     var update = localStorage.getItem("update");
-    var e = Number(update.substr(0, 2))
+    var time = update.split(':');
+    time = Number(time[0])
+    var a = time + 4 - Number(currentDate.getHours())
+    document.getElementById("testId").innerHTML = "Time until update: " + a;
+
     // if (e + 4 > Number(currentDate.getHours()) || e - 4 < Number(currentDate.getHours())) {
-    document.getElementById("testId").innerHTML = "Time until update: " + e + 4 - Number(currentDate.getHours());
     // }
     // else {
     //     document.getElementById("testId").innerHTML = "Time until update: 0";
