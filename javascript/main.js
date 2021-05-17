@@ -45,12 +45,12 @@ function timeToUpdate() {
     var currentDate = new Date();
     var update = localStorage.getItem("update");
     var e = Number(update.substr(0, 2))
-    if (e + 4 > Number(currentDate.getHours()) || e - 4 < Number(currentDate.getHours())) {
-        document.getElementById("testId").innerHTML = "Time until update: " + e + 4 - Number(currentDate.getHours());
-    }
-    else {
-        document.getElementById("testId").innerHTML = "Time until update: 0";
-    }
+    // if (e + 4 > Number(currentDate.getHours()) || e - 4 < Number(currentDate.getHours())) {
+    document.getElementById("testId").innerHTML = "Time until update: " + e + 4 - Number(currentDate.getHours());
+    // }
+    // else {
+    //     document.getElementById("testId").innerHTML = "Time until update: 0";
+    // }
 
 }
 
